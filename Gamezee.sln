@@ -5,11 +5,17 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gamezee", "Gamezee\Gamezee.csproj", "{0FD05BE0-1D11-421B-95F7-9706DDF32702}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{82A2428F-F138-41A0-9561-CFE8343D4243}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{82A2428F-F138-41A0-9561-CFE8343D4243}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{966908E1-6EA9-42EA-A08C-4C7EFA9F2650}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{7890A897-5678-4747-9F56-FF1D268EE874}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{9A5339BE-4352-45AF-81B4-5F9B8B9E97E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gamezee.Domain", "Gamezee.Domain\Gamezee.Domain.csproj", "{301BD683-BDA0-46F2-8BF2-DF5D153A7529}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gamezee.Infrastructure.Database", "Gamezee.Infrastructure.Database\Gamezee.Infrastructure.Database.csproj", "{13E916AF-C3EF-4C72-800D-364FAFEE9560}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +27,21 @@ Global
 		{0FD05BE0-1D11-421B-95F7-9706DDF32702}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FD05BE0-1D11-421B-95F7-9706DDF32702}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FD05BE0-1D11-421B-95F7-9706DDF32702}.Release|Any CPU.Build.0 = Release|Any CPU
+		{301BD683-BDA0-46F2-8BF2-DF5D153A7529}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{301BD683-BDA0-46F2-8BF2-DF5D153A7529}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{301BD683-BDA0-46F2-8BF2-DF5D153A7529}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{301BD683-BDA0-46F2-8BF2-DF5D153A7529}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13E916AF-C3EF-4C72-800D-364FAFEE9560}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13E916AF-C3EF-4C72-800D-364FAFEE9560}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13E916AF-C3EF-4C72-800D-364FAFEE9560}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13E916AF-C3EF-4C72-800D-364FAFEE9560}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{301BD683-BDA0-46F2-8BF2-DF5D153A7529} = {82A2428F-F138-41A0-9561-CFE8343D4243}
+		{13E916AF-C3EF-4C72-800D-364FAFEE9560} = {966908E1-6EA9-42EA-A08C-4C7EFA9F2650}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {97A9DABD-CE37-47B0-92C1-B595E209FB18}
