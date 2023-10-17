@@ -21,4 +21,8 @@
     <ProjectReference Include="..\Gamezee.Domain\Gamezee.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+
 </Project>
