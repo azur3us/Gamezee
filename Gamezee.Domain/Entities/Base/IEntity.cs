@@ -1,11 +1,11 @@
 ﻿namespace Gamezee.Domain.Entities.Base
 {
-    public interface IBaseEntity
+    public interface IEntity
     {
 
     }
 
-    public interface IBaseEntity<TKey> 
+    public interface IEntity<TKey> : IEntity
     {
         public TKey Id { get; set; }
     }

@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gamezee.Domain", "Gamezee.D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gamezee.Infrastructure.Database", "Gamezee.Infrastructure.Database\Gamezee.Infrastructure.Database.csproj", "{13E916AF-C3EF-4C72-800D-364FAFEE9560}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gamezee.Domain.Repository", "Gamezee.Domain.Repository\Gamezee.Domain.Repository.csproj", "{C1D38415-3F46-4A82-9F0A-E82BDC2B89ED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{13E916AF-C3EF-4C72-800D-364FAFEE9560}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13E916AF-C3EF-4C72-800D-364FAFEE9560}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13E916AF-C3EF-4C72-800D-364FAFEE9560}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1D38415-3F46-4A82-9F0A-E82BDC2B89ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1D38415-3F46-4A82-9F0A-E82BDC2B89ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1D38415-3F46-4A82-9F0A-E82BDC2B89ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1D38415-3F46-4A82-9F0A-E82BDC2B89ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -42,6 +48,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{301BD683-BDA0-46F2-8BF2-DF5D153A7529} = {82A2428F-F138-41A0-9561-CFE8343D4243}
 		{13E916AF-C3EF-4C72-800D-364FAFEE9560} = {966908E1-6EA9-42EA-A08C-4C7EFA9F2650}
+		{C1D38415-3F46-4A82-9F0A-E82BDC2B89ED} = {82A2428F-F138-41A0-9561-CFE8343D4243}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {97A9DABD-CE37-47B0-92C1-B595E209FB18}

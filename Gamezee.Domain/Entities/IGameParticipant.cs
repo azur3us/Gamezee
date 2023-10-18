@@ -2,7 +2,7 @@
 
 namespace Gamezee.Domain.Entities
 {
-    public interface IGameParticipant : IBaseEntity<int>
+    public interface IGameParticipant : IEntity<int>
     {
         public string? PlayerFirstName { get; set; } 
         public string? PlayerLastName { get; set; }

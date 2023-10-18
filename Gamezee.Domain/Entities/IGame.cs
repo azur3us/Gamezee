@@ -3,7 +3,7 @@ using Gamezee.Domain.Enums;
 
 namespace Gamezee.Domain.Entities
 {
-    public interface IGame : IBaseEntity<string>
+    public interface IGame : IEntity<string>
     {
         public EGameType Type { get; set; }
         public int MinPlayers { get; set; }

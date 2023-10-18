@@ -18,11 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Gamezee.Domain.Repository\Gamezee.Domain.Repository.csproj" />
     <ProjectReference Include="..\Gamezee.Domain\Gamezee.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Repositories\" />
   </ItemGroup>
 
 </Project>
