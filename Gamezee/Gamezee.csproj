@@ -16,7 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Gamezee.Application\Gamezee.Application.csproj" />
     <ProjectReference Include="..\Gamezee.Infrastructure.Database\Gamezee.Infrastructure.Database.csproj" />
+    <ProjectReference Include="..\Gamezee.Presentation.RestAPI\Gamezee.Presentation.RestAPI.csproj" />
   </ItemGroup>
 
 </Project>

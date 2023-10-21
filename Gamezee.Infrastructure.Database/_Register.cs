@@ -4,7 +4,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Routing;
-
+using Gamezee.Domain.Repository;
+using Gamezee.Infrastructure.Database.Repositories;
 
 namespace Gamezee.Infrastructure.Database
 {
@@ -26,6 +27,10 @@ namespace Gamezee.Infrastructure.Database
             services.AddIdentityCore<AppUser>()
                 .AddEntityFrameworkStores<AppDbContext>()
                 .AddApiEndpoints();
+
+            //Register repositories
+            services.AddScoped<IGameRepository, GameRepository>();
+            services.AddScoped<IGameGroupRepository, GameGroupRepository>();
 
             return services;
         }

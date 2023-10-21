@@ -1,6 +1,8 @@
-﻿namespace Gamezee.Domain.Entities
+﻿using Gamezee.Domain.Entities.Base;
+
+namespace Gamezee.Domain.Entities
 {
-    public interface IAppUser
+    public interface IAppUser : IEntity
     {
         public string? UserName { get; set; }
         public string? Email { get; set; }

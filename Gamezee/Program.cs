@@ -1,10 +1,14 @@
 using Gamezee.Infrastructure.Database;
+using Gamezee.Application;
+using Gamezee.Presentation.RestAPI;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddApplicationPart(typeof(_AssemblyReference).Assembly);
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -13,6 +17,7 @@ string connnectionString = builder.Configuration.GetConnectionString("DefaultCon
 
 //DI services configuration
 builder.Services.AddDatabase(connnectionString);
+builder.Services.AddApplication();
 
 var app = builder.Build();
 
