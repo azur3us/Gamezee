@@ -2,14 +2,17 @@
 
 namespace Gamezee.Domain.Abstraction.Services.Base
 {
-    public interface ICRUDService<TKey, TCreateDto, TUpdateDTO>
+    public interface ICRUDService<TKey, TCreateDto, TUpdateDTO, TReadDTO>
         where TCreateDto : ICreateDTO
         where TUpdateDTO : IUpdateDTO
+        where TReadDTO : IReadDTO
     {
         Task<TKey> CreateAsync(TCreateDto dto);
         Task UpdateAsync(TUpdateDTO dto);
         Task DeleteAsync(TKey id);
 
-        Task<List<T>> Read<T>();
+        Task<List<IReadDTO>> Read();
+        Task<IReadDTO> Read(TKey id);
+
     }
 }

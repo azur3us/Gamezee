@@ -3,7 +3,7 @@ using Gamezee.Domain.Abstraction.Services.Base;
 
 namespace Gamezee.Domain.Abstraction.Services
 {
-    public interface IGameService : ICRUDService<string, ICreateDTO, IUpdateDTO>
+    public interface IGameService : ICRUDService<string, ICreateDTO, IUpdateDTO, IReadDTO>
     {
     }
 }

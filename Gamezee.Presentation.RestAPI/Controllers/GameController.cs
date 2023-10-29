@@ -6,7 +6,7 @@ namespace Gamezee.Presentation.RestAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    internal class GameController : ControllerBase
+    public class GameController : ControllerBase
     {
         private readonly IGameService _gameService;
 
@@ -22,20 +22,22 @@ namespace Gamezee.Presentation.RestAPI.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetGame(string id)
+        public async Task<ActionResult<GameDTO>> GetGame(string id)
         {
-            return Ok();
+            return Ok(await _gameService.Read(id));
         }
 
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CreateGameDTO dto)
         {
-            return CreatedAtAction(nameof(Create), null);
+            var id = await _gameService.CreateAsync(dto);
+            return CreatedAtAction(nameof(Create), id);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update()
+        public async Task<IActionResult> Update([FromBody] UpdateGameDTO dto)
         {
+            await _gameService.UpdateAsync(dto);
             return NoContent();
         }
 

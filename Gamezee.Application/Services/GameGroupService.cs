@@ -1,6 +1,7 @@
 ﻿using Gamezee.Application.DTO.GameGroups;
 using Gamezee.Domain.Abstraction.Dtos;
 using Gamezee.Domain.Abstraction.Services;
+using Gamezee.Domain.Entities;
 using Gamezee.Domain.Repository;
 
 namespace Gamezee.Application.Services
@@ -25,19 +26,29 @@ namespace Gamezee.Application.Services
             return entity.Id;
         }
 
-        public Task DeleteAsync(string id)
+        public async Task DeleteAsync(string id)
+        {
+            await _gameGroupRepository.DeleteAsync(id);
+        }
+
+        public Task<List<IReadDTO>> Read()
         {
             throw new NotImplementedException();
         }
 
-        public Task<List<T>> Read<T>()
+        public async Task<IReadDTO> Read(string id)
         {
-            throw new NotImplementedException();
+            var entity = await _gameGroupRepository.ReadAsync(id);
+            return new GameGroupDTO(entity);
         }
 
-        public Task UpdateAsync(IUpdateDTO dto)
+        public async Task UpdateAsync(IUpdateDTO dto)
         {
-            throw new NotImplementedException();
+            var updateDto = (UpdateGameGroupDTO)dto;
+            var entity = await _gameGroupRepository.ReadAsync(updateDto.Id);
+            entity.Name = updateDto.Name;
+            await _gameGroupRepository.UpdateAsync(entity);
+
         }
     }
 }

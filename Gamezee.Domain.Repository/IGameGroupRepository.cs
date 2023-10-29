@@ -3,7 +3,7 @@ using Gamezee.Domain.Repository.Base;
 
 namespace Gamezee.Domain.Repository
 {
-    public interface IGameGroupRepository : IBaseRepository<IGameGroup>
+    public interface IGameGroupRepository : IBaseRepository<IGameGroup, string>
     {
     }
 }

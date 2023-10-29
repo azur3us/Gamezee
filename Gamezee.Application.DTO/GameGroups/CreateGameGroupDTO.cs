@@ -2,7 +2,7 @@
 
 namespace Gamezee.Application.DTO.GameGroups
 {
-    public class CreateGameGroupDTO : ICreateDTO
+    public record CreateGameGroupDTO : ICreateDTO
     {
         public required string Name { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow.Date;

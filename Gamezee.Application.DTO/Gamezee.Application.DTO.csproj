@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Gamezee.Domain.Abstraction\Gamezee.Domain.Abstraction.csproj" />
+    <ProjectReference Include="..\Gamezee.Domain\Gamezee.Domain.csproj" />
   </ItemGroup>
 
 </Project>
