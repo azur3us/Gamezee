@@ -11,6 +11,7 @@ namespace Gamezee.Application
             //Service registration 
             services.AddScoped<IGameService, GameService>();
             services.AddScoped<IGameGroupService, GameGroupService>();
+            services.AddScoped<IGameGroupMemberService, GameGroupMemberService>();
 
             return services;
         }

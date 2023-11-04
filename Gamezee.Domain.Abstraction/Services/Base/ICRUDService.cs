@@ -11,8 +11,8 @@ namespace Gamezee.Domain.Abstraction.Services.Base
         Task UpdateAsync(TUpdateDTO dto);
         Task DeleteAsync(TKey id);
 
-        Task<List<IReadDTO>> Read();
-        Task<IReadDTO> Read(TKey id);
+        Task<List<TReadDTO>> Read();
+        Task<TReadDTO> Read(TKey id);
 
     }
 }

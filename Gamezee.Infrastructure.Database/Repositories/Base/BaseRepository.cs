@@ -3,7 +3,7 @@ using Gamezee.Domain.Repository.Base;
 
 namespace Gamezee.Infrastructure.Database.Repositories.Base
 {
-    internal abstract class BaseRepository<TInterface, TEntity> : IBaseRepository<TInterface>
+    internal abstract class BaseRepository<TInterface, TEntity, TKey> : IBaseRepository<TInterface, TKey>
         where TEntity : class, TInterface
         where TInterface : IEntity
     {
@@ -32,7 +32,7 @@ namespace Gamezee.Infrastructure.Database.Repositories.Base
             await _context.SaveChangesAsync();
         }
 
-        public virtual async Task DeleteAsync<TKey>(TKey id)
+        public virtual async Task DeleteAsync(TKey id)
         {
             var entity = await this.ReadAsync(id);
             await this.DeleteAsync(entity);
@@ -55,14 +55,14 @@ namespace Gamezee.Infrastructure.Database.Repositories.Base
             return Activator.CreateInstance<TEntity>();
         }
 
-        public virtual async Task<IEntity> ReadAsync<TKey>(TKey id)
+        public virtual async Task<TInterface> ReadAsync(TKey id)
         {
             var entity = await _context.FindAsync<IEntity>(id);
 
             if (entity is null)
                 throw new ArgumentNullException($"Cannot find entity with id:{id}");
 
-            return entity;
+            return (TInterface)entity;
         }
     }
 }

@@ -6,5 +6,7 @@ namespace Gamezee.Domain.Entities
     {
         public string UserId { get; set; }
         public string GroupId { get; set; }
+        public int GameAttendance { get; set; }
+        public int? SkillRate { get; set; }
     }
 }

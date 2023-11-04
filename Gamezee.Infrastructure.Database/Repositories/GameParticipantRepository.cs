@@ -5,7 +5,7 @@ using Gamezee.Infrastructure.Models;
 
 namespace Gamezee.Infrastructure.Database.Repositories
 {
-    internal class GameParticipantRepository : BaseRepository<IGameParticipant, GameParticipant>, IGameParticipantRepository
+    internal class GameParticipantRepository : BaseRepository<IGameParticipant, GameParticipant, int>, IGameParticipantRepository
     {
         public GameParticipantRepository(AppDbContext context) : base(context)
         {

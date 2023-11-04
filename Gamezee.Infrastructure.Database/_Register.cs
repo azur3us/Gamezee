@@ -31,6 +31,7 @@ namespace Gamezee.Infrastructure.Database
             //Register repositories
             services.AddScoped<IGameRepository, GameRepository>();
             services.AddScoped<IGameGroupRepository, GameGroupRepository>();
+            services.AddScoped<IGameGroupMemberRepository, GameGroupMemberRepository>();
 
             return services;
         }

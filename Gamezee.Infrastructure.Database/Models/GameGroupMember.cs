@@ -11,5 +11,7 @@ namespace Gamezee.Infrastructure.Models
         public required AppUser User { get; set; }
         public required string GroupId { get; set; }
         public required GameGroup Group { get; set; }
+        public int GameAttendance { get; set; }
+        public int? SkillRate { get; set; }
     }
 }

@@ -24,6 +24,10 @@ namespace Gamezee.Infrastructure.Database
                 .Entity<Game>()
                 .ToTable(g => g.HasCheckConstraint("CK_Properties_MinPlayers_MaxPlayers", "[MaxPlayers] > [MinPlayers]"))
                 .ToTable(g => g.HasCheckConstraint("CK_Properties_Duration_GreaterThan", "[Duration] > 0"));
+
+            builder
+                .Entity<GameGroupMember>()
+                .ToTable(g => g.HasCheckConstraint("CK_Properties_SkillRate_MaxValue", "[SkillRate] <= 5"));
         }
     }
 }

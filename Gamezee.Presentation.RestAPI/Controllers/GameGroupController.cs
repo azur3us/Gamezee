@@ -15,10 +15,10 @@ namespace Gamezee.Presentation.RestAPI.Controllers
             _gameGroupService = gameGroupService;
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public async Task<ActionResult<GameGroupDTO>> Get(string id)
         {
-            var gameGroup = await _gameGroupService.Read<GameGroupDTO>(id);
+            var gameGroup = await _gameGroupService.Read(id);
             return Ok(gameGroup);
         }
 

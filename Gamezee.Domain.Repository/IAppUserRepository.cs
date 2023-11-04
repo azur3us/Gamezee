@@ -3,7 +3,7 @@ using Gamezee.Domain.Repository.Base;
 
 namespace Gamezee.Domain.Repository
 {
-    public interface IAppUserRepository : IBaseRepository<IAppUser>
+    public interface IAppUserRepository : IBaseRepository<IAppUser, string>
     {
     }
 }

@@ -5,7 +5,7 @@ using Gamezee.Infrastructure.Models;
 
 namespace Gamezee.Infrastructure.Database.Repositories
 {
-    internal class GameGroupRepository : BaseRepository<IGameGroup, GameGroup>, IGameGroupRepository
+    internal class GameGroupRepository : BaseRepository<IGameGroup, GameGroup, string>, IGameGroupRepository
     {
         public GameGroupRepository(AppDbContext context) : base(context)
         {
