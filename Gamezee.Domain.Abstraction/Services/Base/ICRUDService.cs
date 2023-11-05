@@ -8,11 +8,11 @@ namespace Gamezee.Domain.Abstraction.Services.Base
         where TReadDTO : IReadDTO
     {
         Task<TKey> CreateAsync(TCreateDto dto);
-        Task UpdateAsync(TUpdateDTO dto);
+        Task UpdateAsync(TKey id,TUpdateDTO dto);
         Task DeleteAsync(TKey id);
 
-        Task<List<TReadDTO>> Read();
-        Task<TReadDTO> Read(TKey id);
+        Task<List<TReadDTO>> ReadAsync();
+        Task<TReadDTO> ReadAsync(TKey id);
 
     }
 }

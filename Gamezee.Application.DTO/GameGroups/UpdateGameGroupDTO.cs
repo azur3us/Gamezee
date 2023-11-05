@@ -2,7 +2,7 @@
 
 namespace Gamezee.Application.DTO.GameGroups
 {
-    public class UpdateGameGroupDTO : IUpdateDTO
+    public record UpdateGameGroupDTO : IUpdateDTO
     {
         public string Id { get; set; }
         public string Name { get; set; }

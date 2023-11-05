@@ -31,21 +31,21 @@ namespace Gamezee.Application.Services
             await _gameGroupRepository.DeleteAsync(id);
         }
 
-        public Task<List<IReadDTO>> Read()
+        public Task<List<IReadDTO>> ReadAsync()
         {
             throw new NotImplementedException();
         }
 
-        public async Task<IReadDTO> Read(string id)
+        public async Task<IReadDTO> ReadAsync(string id)
         {
-            var entity = await _gameGroupRepository.ReadAsync(id);
+            var entity = await _gameGroupRepository.GetAsync(id);
             return new GameGroupDTO(entity);
         }
 
-        public async Task UpdateAsync(IUpdateDTO dto)
+        public async Task UpdateAsync(string id, IUpdateDTO dto)
         {
             var updateDto = (UpdateGameGroupDTO)dto;
-            var entity = await _gameGroupRepository.ReadAsync(updateDto.Id);
+            var entity = await _gameGroupRepository.GetAsync(id);
             entity.Name = updateDto.Name;
             await _gameGroupRepository.UpdateAsync(entity);
 

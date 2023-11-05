@@ -34,7 +34,7 @@ namespace Gamezee.Infrastructure.Database.Repositories.Base
 
         public virtual async Task DeleteAsync(TKey id)
         {
-            var entity = await this.ReadAsync(id);
+            var entity = await this.GetAsync(id);
             await this.DeleteAsync(entity);
         }
 
@@ -55,7 +55,7 @@ namespace Gamezee.Infrastructure.Database.Repositories.Base
             return Activator.CreateInstance<TEntity>();
         }
 
-        public virtual async Task<TInterface> ReadAsync(TKey id)
+        public virtual async Task<TInterface> GetAsync(TKey id)
         {
             var entity = await _context.FindAsync<IEntity>(id);
 

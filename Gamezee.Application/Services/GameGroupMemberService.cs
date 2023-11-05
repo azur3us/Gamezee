@@ -39,7 +39,7 @@ namespace Gamezee.Application.Services
 
         public async Task SetSkillRate(string userId, string groupId, int? skillRate)
         {
-            var entity = await _gameGroupMemberRepository.ReadAsync((userId, groupId));
+            var entity = await _gameGroupMemberRepository.GetAsync((userId, groupId));
             entity.SkillRate = skillRate;
             await _gameGroupMemberRepository.UpdateAsync(entity);
         }

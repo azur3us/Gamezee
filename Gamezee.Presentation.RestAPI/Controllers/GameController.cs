@@ -24,7 +24,7 @@ namespace Gamezee.Presentation.RestAPI.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<GameDTO>> GetGame(string id)
         {
-            return Ok(await _gameService.Read(id));
+            return Ok(await _gameService.ReadAsync(id));
         }
 
         [HttpPost]
@@ -35,9 +35,9 @@ namespace Gamezee.Presentation.RestAPI.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update([FromBody] UpdateGameDTO dto)
+        public async Task<IActionResult> Update(string id, [FromBody] UpdateGameDTO dto)
         {
-            await _gameService.UpdateAsync(dto);
+            await _gameService.UpdateAsync(id, dto);
             return NoContent();
         }
 

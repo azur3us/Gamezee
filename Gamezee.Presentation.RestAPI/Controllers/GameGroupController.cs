@@ -18,7 +18,7 @@ namespace Gamezee.Presentation.RestAPI.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<GameGroupDTO>> Get(string id)
         {
-            var gameGroup = await _gameGroupService.Read(id);
+            var gameGroup = await _gameGroupService.ReadAsync(id);
             return Ok(gameGroup);
         }
 
@@ -29,14 +29,14 @@ namespace Gamezee.Presentation.RestAPI.Controllers
             return CreatedAtAction(nameof(Create), id);
         }
 
-        [HttpPut]
-        public async Task<IActionResult> Update([FromBody] UpdateGameGroupDTO dto)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(string id, [FromBody] UpdateGameGroupDTO dto)
         {
-            await _gameGroupService.UpdateAsync(dto);
+            await _gameGroupService.UpdateAsync(id, dto);
             return NoContent();
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(string id)
         {
             await _gameGroupService.DeleteAsync(id);
