@@ -57,12 +57,12 @@ namespace Gamezee.Infrastructure.Database.Repositories.Base
 
         public virtual async Task<TInterface> GetAsync(TKey id)
         {
-            var entity = await _context.FindAsync<IEntity>(id);
+            var entity = await _context.FindAsync<TEntity>(id);
 
             if (entity is null)
                 throw new ArgumentNullException($"Cannot find entity with id:{id}");
 
-            return (TInterface)entity;
+            return entity;
         }
     }
 }

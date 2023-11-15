@@ -1,11 +1,13 @@
 ﻿using Gamezee.Application.DTO.GameGroups;
 using Gamezee.Domain.Abstraction.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Gamezee.Presentation.RestAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Authorize]
     [ApiController]
+    [Route("api/[controller]")]
     public class GameGroupController : ControllerBase
     {
         private readonly IGameGroupService _gameGroupService;
