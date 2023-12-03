@@ -18,7 +18,8 @@ namespace Gamezee.Infrastructure.Database
                 throw new ArgumentNullException("Connection string cannot be null");
             }
 
-            services.AddAuthentication().AddBearerToken(IdentityConstants.BearerScheme);
+            services.AddAuthentication()
+                .AddBearerToken(IdentityConstants.BearerScheme);
             services.AddAuthorizationBuilder();
 
             services.AddDbContext<AppDbContext>(options => 

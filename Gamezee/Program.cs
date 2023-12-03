@@ -15,6 +15,11 @@ builder.Services.AddSwaggerGen();
 
 string connnectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
+builder.Services.AddCors(opt => opt.AddPolicy(name: "ClientApp", configurePolicy: policy =>
+{
+    policy.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader();
+}));
+
 //DI services configuration
 builder.Services.AddDatabase(connnectionString);
 builder.Services.AddApplication();
@@ -33,6 +38,7 @@ app.UseHttpsRedirection();
 app.UseMapIdentityApi();
 
 app.UseAuthorization();
+app.UseCors("ClientApp");
 
 app.MapControllers();
 
