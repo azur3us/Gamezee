@@ -24,7 +24,7 @@ export class RegisterComponent implements OnInit {
   public registerHandler() {
     if (this.form.valid) {
       const user: Register = { ...new Register(), ...this.form.value }
-      
+
       this.authService.register(user).subscribe(result => {
         console.log(result);
       });

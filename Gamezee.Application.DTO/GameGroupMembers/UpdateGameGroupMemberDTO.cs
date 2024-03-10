@@ -1,6 +1,6 @@
 ﻿namespace Gamezee.Application.DTO.GameGroupMembers
 {
-    public class UpdateGameGroupMember
+    public class UpdateGameGroupMemberDTO
     {
         public int? SkillRate { get; set; }
     }

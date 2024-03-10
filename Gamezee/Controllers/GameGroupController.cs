@@ -1,11 +1,12 @@
 ﻿using Gamezee.Application.DTO.GameGroups;
 using Gamezee.Domain.Abstraction.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Gamezee.Presentation.RestAPI.Controllers
+namespace Gamezee.Controllers
 {
-    [Authorize(AuthenticationSchemes = "Bearer")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [ApiController]
     [Route("api/[controller]")]
     public class GameGroupController : ControllerBase

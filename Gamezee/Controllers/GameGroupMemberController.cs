@@ -2,7 +2,7 @@
 using Gamezee.Domain.Abstraction.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Gamezee.Presentation.RestAPI.Controllers
+namespace Gamezee.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

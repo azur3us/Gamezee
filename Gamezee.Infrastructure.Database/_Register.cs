@@ -1,11 +1,11 @@
-﻿using Gamezee.Infrastructure.Database.Models;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Identity;
+﻿using Gamezee.Domain.Abstraction.Services;
+using Gamezee.Domain.Repository;
+using Gamezee.Infrastructure.Database.Authorization;
+using Gamezee.Infrastructure.Database.Models;
+using Gamezee.Infrastructure.Database.Repositories;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.AspNetCore.Routing;
-using Gamezee.Domain.Repository;
-using Gamezee.Infrastructure.Database.Repositories;
 
 namespace Gamezee.Infrastructure.Database
 {
@@ -17,23 +17,20 @@ namespace Gamezee.Infrastructure.Database
             {
                 throw new ArgumentNullException("Connection string cannot be null");
             }
-
-            services.AddAuthentication()
-                .AddBearerToken(IdentityConstants.BearerScheme);
-            services.AddAuthorizationBuilder();
-
-            services.AddDbContext<AppDbContext>(options => 
+      
+            services.AddDbContext<AppDbContext>(options =>
             options.UseSqlServer(connectionString));
 
-            services.AddIdentityCore<AppUser>()
-                .AddEntityFrameworkStores<AppDbContext>()
-                .AddApiEndpoints();
+            services.AddDefaultIdentity<AppUser>(options =>
+            options.SignIn.RequireConfirmedEmail = false)
+                .AddEntityFrameworkStores<AppDbContext>();
 
             //Register repositories
             services.AddScoped<IGameRepository, GameRepository>();
             services.AddScoped<IGameGroupRepository, GameGroupRepository>();
             services.AddScoped<IGameGroupMemberRepository, GameGroupMemberRepository>();
             services.AddScoped<IGameParticipantRepository, GameParticipantRepository>();
+            services.AddScoped<IAuthService, AuthManegement>();
 
             return services;
         }

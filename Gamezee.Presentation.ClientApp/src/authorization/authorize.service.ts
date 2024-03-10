@@ -14,13 +14,15 @@ export class AuthorizeService {
 
   constructor(private http: HttpClient) { }
 
+  // public isAuthenticated(): Observable<boolean>{
+
+  // }
+
   public register(user: Register): Observable<void> {
-    const url = environment.apiUrl + ApplicationPaths.Register;
-    console.log(url)
-    return this.http.post<void>(url, user);
+    return this.http.post<void>(environment.apiUrl + ApplicationPaths.Register, user);
   }
 
-  public login(user: Login): Observable<JwtAuth>{
+  public login(user: Login): Observable<JwtAuth> {
     return this.http.post<JwtAuth>(environment.apiUrl + ApplicationPaths.Login, user);
   }
 

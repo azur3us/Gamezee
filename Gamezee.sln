@@ -23,9 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gamezee.Application", "Game
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gamezee.Domain.Abstraction", "Gamezee.Domain.Abstraction\Gamezee.Domain.Abstraction.csproj", "{16F75B92-E2A3-4539-B7C3-855F3C131A37}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gamezee.Presentation.RestAPI", "Gamezee.Presentation.RestAPI\Gamezee.Presentation.RestAPI.csproj", "{FB8C2774-254B-4B67-AD05-2B149A18E28A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gamezee.Application.DTO", "Gamezee.Application.DTO\Gamezee.Application.DTO.csproj", "{DFC96FEA-D9B5-4071-ADA5-99BD4833343E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gamezee.Application.DTO", "Gamezee.Application.DTO\Gamezee.Application.DTO.csproj", "{DFC96FEA-D9B5-4071-ADA5-99BD4833343E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,10 +55,6 @@ Global
 		{16F75B92-E2A3-4539-B7C3-855F3C131A37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16F75B92-E2A3-4539-B7C3-855F3C131A37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16F75B92-E2A3-4539-B7C3-855F3C131A37}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FB8C2774-254B-4B67-AD05-2B149A18E28A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FB8C2774-254B-4B67-AD05-2B149A18E28A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FB8C2774-254B-4B67-AD05-2B149A18E28A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FB8C2774-254B-4B67-AD05-2B149A18E28A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DFC96FEA-D9B5-4071-ADA5-99BD4833343E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DFC96FEA-D9B5-4071-ADA5-99BD4833343E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFC96FEA-D9B5-4071-ADA5-99BD4833343E}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -75,7 +69,6 @@ Global
 		{C1D38415-3F46-4A82-9F0A-E82BDC2B89ED} = {82A2428F-F138-41A0-9561-CFE8343D4243}
 		{F5233A7D-145E-4665-9523-139228030EBD} = {7890A897-5678-4747-9F56-FF1D268EE874}
 		{16F75B92-E2A3-4539-B7C3-855F3C131A37} = {82A2428F-F138-41A0-9561-CFE8343D4243}
-		{FB8C2774-254B-4B67-AD05-2B149A18E28A} = {9A5339BE-4352-45AF-81B4-5F9B8B9E97E5}
 		{DFC96FEA-D9B5-4071-ADA5-99BD4833343E} = {7890A897-5678-4747-9F56-FF1D268EE874}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

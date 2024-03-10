@@ -5,6 +5,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { LoginComponent } from "./login/login.component";
 import { RegisterComponent } from "./register/register.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { JwtModule } from "@auth0/angular-jwt";
 
 const routes: Routes = [
     {
@@ -26,7 +27,7 @@ const routes: Routes = [
       RouterModule.forChild(routes)
     ],
     declarations: [LoginComponent, RegisterComponent],
-    exports: [LoginComponent, RegisterComponent]
+    exports: [LoginComponent, RegisterComponent],
   })
 
   export class AuthorizationModule { }

@@ -8,6 +8,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthorizationModule } from '../authorization/authorization.module';
 import { FormsModule } from '@angular/forms';
+import { JwtModule } from '@auth0/angular-jwt';
+import { JwtAuth } from '../authorization/jwtToken';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,11 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     AuthorizationModule,
+    JwtModule.forRoot({
+      config:{
+        tokenGetter: () => (JSON.parse(localStorage.getItem('jwt') ?? '') as JwtAuth)?.accessToken
+      }
+    }),
     NgbModule
   ],
   providers: [
